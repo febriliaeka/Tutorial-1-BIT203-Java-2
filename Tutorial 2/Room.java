@@ -16,16 +16,16 @@ public class Room {
     String name;
     int noOfChairs;
     boolean isBooked;
-    Dimension dimension;
-    Window window;
+    ArrayList<Dimension> dimension = new ArrayList<Dimension>();
+    ArrayList<Window> window = new ArrayList<Window>();
     
     public Room(String inName, int inNoOfChairs, 
             boolean inBooked, Dimension inDimension, Window inWindow){
         name = inName;
         noOfChairs = inNoOfChairs;
         isBooked = inBooked;
-        dimension = inDimension;
-        window = inWindow;
+        dimension.add(inDimension);
+        window.add (inWindow);
     }
     
     public Room(){
@@ -46,6 +46,14 @@ public class Room {
         isBooked = inBooked;
     }
     
+    public void setDimension(ArrayList<Dimension>inDimension){
+        dimension = inDimension;
+    }
+    
+    public void setWindow(ArrayList<Window>inWindow){
+        window = inWindow;
+    }
+    
     public String getName(){
         return name;
     }
@@ -58,8 +66,16 @@ public class Room {
         return isBooked;
     }
     
+    public ArrayList<Dimension> getDimension(){
+        return dimension;
+    }
+    
+    public ArrayList<Window> getWindow(){
+        return window;
+    }
+    
     public String toString(){
-        return "Room "+name+" with "+dimension.toString()+
+        return "Room "+name+" with "+dimension+
                 " (in m), with "+window.toString()+" and "+
                 noOfChairs+" chairs, and is already booked: "+isBooked;
     }
