@@ -63,6 +63,6 @@ public class CreditCardPayment extends Payment{
 
     public String toString()
     {
-            return "Credit Card payment "+super.toString();
+            return "\nUsing card ("+name+" ["+number+"] exp: "+expiredDate+") \nfor credit-card payment, "+super.toString();
     }
 }
