@@ -19,6 +19,6 @@ public class CashPayment extends Payment{
     }
 
     public String toString(){
-            return "Cash payment "+ super.toString();
+            return "Cash payment, "+ super.toString();
     }
 }
